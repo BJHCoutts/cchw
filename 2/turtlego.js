@@ -108,14 +108,14 @@ class Turtle {
         this.maxX();
         this.maxY();
         let myArray = arrayGen(this.xMax,this.yMax);
-      
+        let tempArray = [];
         for (let position of this.walked) {
           myArray[position.y][position.x] = 1
         }
         for (let arr of myArray){
-          arr.join(" ");
+          tempArray.push(arr.join(" "));
         }
-        console.log(myArray.join("\n"));
+        console.log(tempArray.join("\n"));
         return this;
       }
 }
