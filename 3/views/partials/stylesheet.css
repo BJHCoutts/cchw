@@ -1,0 +1,55 @@
+        body{
+            background: url(stars.jpg);
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+        .main{
+            display: grid;
+            grid-gap: 1em;
+            grid-template-rows: repeat(5, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-areas:
+            "hhh"
+            ".1."
+            ".2."
+            ".3."
+            ".4."
+        }
+        .header{
+            grid-area:h;
+            text-align: center;
+            font-family: cursive;
+        }
+        .d1{
+            grid-area:1;
+        }
+        .d2{
+            grid-area:2;
+        }
+        .d3{
+            grid-area:3;
+        }
+        .d4{
+            grid-area:4;
+        }
+        .cell{
+            border-radius:1em;
+            background-color: blanchedalmond;
+            padding: 1.5rem;
+        }
+
+        image{
+            float:left;
+        }
+        .text{
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        form{
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+            vertical-align:top;
+            display:inline-block;
+        }

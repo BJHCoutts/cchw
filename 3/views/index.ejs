@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Quiz</title>
+
+</head>
+
+<body>
+    <h1>Quiz</h1>
+    <br>
+    <div>
+        <form method="POST" action="../results">
+        <h3><%= quiz[0].question%></h3>
+        <input type="radio" name="1" value=1><%= quiz[0].choices[0]%>
+        <input type="radio" name="1" value=2><%= quiz[0].choices[1]%>
+    </div>
+    <br>
+    <div>
+        <h3><%= quiz[1].question%></h3>
+
+        <input type="radio" name="2"><%= quiz[1].choices[0]%>
+        <input type="radio" name="2"><%= quiz[1].choices[1]%>
+        <input type="radio" name="2"><%= quiz[1].choices[2]%>
+        <input type="radio" name="2"><%= quiz[1].choices[3]%>
+    </div>
+    <br>
+    <div>
+        <h3><%= quiz[2].question%></h3>
+
+        <input type="radio" name="3"><%= quiz[2].choices[0]%>
+        <input type="radio" name="3"><%= quiz[2].choices[1]%>
+    </div>
+    <br>
+    <div>
+        <h3><%= quiz[3].question%></h2>
+
+            <input type="radio" name="4"><%= quiz[3].choices[0]%>
+            <input type="radio" name="4"><%= quiz[3].choices[1]%>
+    </div>
+    <br>
+    <div>
+        <h3><%= quiz[4].question%></h3>
+
+        <input type="radio" name="5"><%= quiz[4].choices[0]%>
+        <input type="radio" name="5"><%= quiz[4].choices[1]%>
+    </div>
+    <br>
+        <input type="submit" value="submit">Submit
+    </form>
+</body>
+
+</html>
