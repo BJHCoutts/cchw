@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <h1>Quiz</h1>
     <br>
     <div>
@@ -52,7 +53,16 @@
     </form>
     <% count = 0 %>
    
-    <% if (form.q1==quiz[0].answerIndex+1) {count+=1}%>
+
+    
+    for (let i of quiz){
+        if (i.answerIndex+1==form.q1){
+            count+=1
+        }
+        
+    }
+    
+    <% if (form[`q${i + 1}`]==quiz[i].answerIndex+1) {count+=1}%>
     <% if (form.q2==quiz[1].answerIndex+1) {count+=1}%>
     <% if (form.q3==quiz[2].answerIndex+1) {count+=1}%>
     <% if (form.q4==quiz[3].answerIndex+1) {count+=1}%>
