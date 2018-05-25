@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :find_post
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.order(created_at: :desc)
@@ -55,4 +56,12 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :body)
   end
+
+  def authorize_user!
+    unless can?(:manage, @post)
+      flash[:alert] = "Beat it!"
+      redirect_to post_path(@post)
+    end
+  end
+
 end

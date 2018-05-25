@@ -13,6 +13,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'faker', '~> 1.8.7'
 gem 'bcrypt'
+gem 'cancancan'
 # Silly gems to silly print seed logs
 gem 'lolcat', '~> 90.8.8'
 gem 'cowsay', '~> 0.3.0'
