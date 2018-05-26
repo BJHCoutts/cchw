@@ -16,8 +16,15 @@
       <div class="collapse navbar-collapse">
         <div class="navbar-nav ml-auto">
           <%= link_to "Home", root_path, class: "nav-item nav-link" %>
-          <%= link_to "Login", new_session_path, class: "nav-item nav-link" %>
+          <% if user_signed_in? %>
+      <div class= "nav-item nav-link">Hello, <%= current_user.first_name %>!</div>
+      
+      <%= link_to 'Sign Out', sessions_path, method: :delete, class: "nav-item nav-link" %>
+    <% else %>
+          <%= link_to "Login", new_sessions_path, class: "nav-item nav-link" %>
           <%= link_to "Sign Up", new_user_path, class: "nav-item nav-link" %>
+      
+    <% end %>
           <%= link_to "New Post", new_post_path, class: "nav-item nav-link" %>
         </div>
       </div>
