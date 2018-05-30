@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlogOnRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand sticky-top navbar-outline-primary bg-light mb-4">
+      <%= link_to "Blog On Rails", root_path, class: "navbar-brand" %>
+
+      <div class="collapse navbar-collapse">
+        <div class="navbar-nav ml-auto">
+          <%= link_to "Home", root_path, class: "nav-item nav-link" %>
+          <% if user_signed_in? %>
+      <div class= "nav-item nav-link">Hello, <%= current_user.first_name %>!</div>
+      
+      <%= link_to 'Sign Out', sessions_path, method: :delete, class: "nav-item nav-link" %>
+    <% else %>
+          <%= link_to "Login", new_sessions_path, class: "nav-item nav-link" %>
+          <%= link_to "Sign Up", new_user_path, class: "nav-item nav-link" %>
+      
+    <% end %>
+          <%= link_to "New Post", new_post_path, class: "nav-item nav-link" %>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container-fluid">
+      <% flash.each do |type, message| %>
+        <div class="alert alert-<%= type == "alert" ? "danger" : "success" %>" role="alert">
+          <%= message %>
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </div>
+  </body>
+</html>
